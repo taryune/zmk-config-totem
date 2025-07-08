@@ -36,6 +36,24 @@
         };
     };
 
+    behaviors {
+        appswap: swapper {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI>, <&kp TAB>, <&kt LGUI>;
+        };
+        winswap: swapper {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>, <&kp GRAVE>, <&kt LALT>;
+        };
+        tabswap: swapper {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&kp TAB>, <&kt LCTRL>;
+        };
+    };
+
 
     keymap {
             compatible = "zmk,keymap";
@@ -83,7 +101,7 @@ label= "NAV"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp ESC     &kp TAB     &kp LG(TAB) &kp LG(GRAVE) &kp LC(TAB)   &kp PG_UP   &trans      &kp UP      &trans      &kp BSPC
+                &kp ESC     &kp TAB     &appswap    &winswap    &tabswap        &kp PG_UP   &trans      &kp UP      &trans      &kp BSPC
                 &sk LSHFT   &sk LCTRL   &sk LALT    &sk LGUI    &trans          &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &kp DEL
     &kp ESC     &kp LG(Z)   &kp LG(X)   &kp LG(C)   &kp LG(LS(Z)) &kp LG(V)     &kp CAPS    &trans      &trans      &trans      &kp ENTER    &trans
                                         &trans      &trans      &trans          &trans      &trans      &trans
@@ -111,7 +129,7 @@ label= "SYM"                               ;
 
                 &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp ASTRK   &kp LPAR    &kp RPAR   &kp EQUAL    &kp PLUS
                 &sk LSHFT   &sk LCTRL   &sk LALT    &sk LGUI    &kp CARET       &kp AMPS    &kp LBRC    &kp RBRC   &kp GRAVE    &kp BSLH
-    &kp ESC     &trans      &trans      &trans      &trans      &trans          &trans      &kp LBKT    &kp RBKT   &kp COLON    &kp SEMI    &trans
+    &kp ESC     &trans      &trans      &trans      &kp TILDE   &kp PIPE        &trans      &kp LBKT    &kp RBKT   &kp COLON    &kp SEMI    &trans
                                         &trans      &trans      &trans          &trans      &trans      &trans
                         >;
                 };
@@ -130,15 +148,15 @@ label= "NUM"                               ;
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃    ESC    ┃           ┃           ┃           ┃           ┃           ┃   ┃     .     ┃     1     ┃     2     ┃     3     ┃     0     ┃   BSPC    ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃    NAV    ┃    SHFT   ┃    FUN    ┃   ┃           ┃    SPC    ┃    SYM    ┃
+//                                     ┃    NAV    ┃   RESET   ┃   BOOT    ┃   ┃    BOOT   ┃   RESET   ┃    SYM    ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &trans      &trans      &trans      &trans      &trans          &trans      &kp N7      &kp N8      &kp N9      &kp BSPC
                 &sk LSHFT   &sk LCTRL   &sk LALT    &sk LGUI    &trans          &kp COMMA   &kp N4      &kp N5      &kp N6      &trans
-    &kp ESC     &trans      &trans      &trans      &sys_reset  &bootloader     &kp DOT     &kp N1      &kp N2      &kp N3      &kp N0     &trans
-                                        &trans      &trans      &trans          &trans      &trans &trans
+    &kp ESC     &trans      &trans      &trans      &trans      &trans          &kp DOT     &kp N1      &kp N2      &kp N3      &kp N0     &trans
+                                        &trans      &sys_reset  &bootloader     &bootloader &sys_reset &trans
                         >;
                 };
 
@@ -147,7 +165,7 @@ label= "NUM"                               ;
 
             fun_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-label= "FUN"                             ;
+label= "FUN"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃           ┃   PREV    ┃   PLAY    ┃   NEXT    ┃   VOL_UP  ┃   ┃           ┃    F7     ┃    F8     ┃    F9     ┃    F12    ┃
