@@ -65,7 +65,7 @@ label= "BASE"                              ;
                 &kp Q       &kp W       &kp F       &kp P       &kp B           &kp J       &kp L       &kp U       &kp Y       &kp SQT
                 &kp A       &kp R       &kp S       &kp T       &kp G           &kp H       &kp N       &kp L       &kp I       &kp O
     &kp ESC     &kp Z       &kp X       &kp C       &kp D       &kp V           &kp K       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp BSPC
-                                        &mo NAV     &kp LFHIFT  &mo FUN         &none       &kp SPC     &mo SYM
+                                        &mo NAV     &kp LSHFT   &mo FUN         &none       &kp SPC     &mo SYM
                         >;
                 };
 
