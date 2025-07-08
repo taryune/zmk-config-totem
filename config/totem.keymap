@@ -85,7 +85,7 @@ label= "NAV"                               ;
 
                 &kp ESC     &bt TAB     &kp LG(TAB) &kp LG(GRAVE) &kp LC(TAB)   &kp PG_UP   &trans      &kp UP      &trans      &kp BSPC
                 &sk LSHFT   &sk LCTRL   &sk LALT    &sk LGUI    &trans          &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &kp DEL
-    &kp ESC     &kp K_UNDO  &kp K_CUT   &kp K_COPY  &kp K_REDO  &kp K_PASTE     &kp CAPS    &trans      &trans      &trans      &kp ENTER    &trans
+    &kp ESC     &kp LG(Z)   &kp LG(X)   &kp LG(C)   &kp LG(LS(Z)) &kp LG(P)     &kp CAPS    &trans      &trans      &trans      &kp ENTER    &trans
                                         &trans      &trans      &trans          &trans      &trans      &trans
                         >;
                 };
