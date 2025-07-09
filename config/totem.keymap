@@ -37,18 +37,21 @@
     };
 
     behaviors {
-        appswap: swapper {
+        appswap: appswap {
             compatible = "zmk,behavior-tri-state";
+            label = "App Switcher";
             #binding-cells = <0>;
             bindings = <&kp LGUI>, <&kp TAB>, <&kt LGUI>;
         };
-        winswap: swapper {
+        winswap: winswap {
             compatible = "zmk,behavior-tri-state";
+            label = "Window Switcher";
             #binding-cells = <0>;
             bindings = <&kp LALT>, <&kp GRAVE>, <&kt LALT>;
         };
-        tabswap: swapper {
+        tabswap: tabswap {
             compatible = "zmk,behavior-tri-state";
+            label = "Tab Switcher";
             #binding-cells = <0>;
             bindings = <&kp LCTRL>, <&kp TAB>, <&kt LCTRL>;
         };
