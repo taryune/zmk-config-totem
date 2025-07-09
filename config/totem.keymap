@@ -41,19 +41,19 @@
             compatible = "zmk,behavior-tri-state";
             label = "App Switcher";
             #binding-cells = <0>;
-            bindings = <&kp LGUI>, <&kp TAB>, <&kt LGUI>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
         };
         winswap: winswap {
             compatible = "zmk,behavior-tri-state";
             label = "Window Switcher";
             #binding-cells = <0>;
-            bindings = <&kp LALT>, <&kp GRAVE>, <&kt LALT>;
+            bindings = <&kt LALT>, <&kp GRAVE>, <&kt LALT>;
         };
         tabswap: tabswap {
             compatible = "zmk,behavior-tri-state";
             label = "Tab Switcher";
             #binding-cells = <0>;
-            bindings = <&kp LCTRL>, <&kp TAB>, <&kt LCTRL>;
+            bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
         };
     };
 
@@ -130,7 +130,7 @@ label= "SYM"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp ASTRK   &kp LPAR    &kp RPAR   &kp EQUAL    &kp PLUS
+                &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp ASTRK   &kp LPAR    &kp RPAR   &kp MINUS            &kp PLUS
                 &sk LSHFT   &sk LCTRL   &sk LALT    &sk LGUI    &kp CARET       &kp AMPS    &kp LBRC    &kp RBRC   &kp GRAVE    &kp BSLH
     &kp ESC     &trans      &trans      &trans      &kp TILDE   &kp PIPE        &trans      &kp LBKT    &kp RBKT   &kp COLON    &kp SEMI    &trans
                                         &trans      &trans      &trans          &trans      &trans      &trans
