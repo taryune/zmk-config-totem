@@ -225,7 +225,7 @@
     // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
     // ┃    ESC    ┃           ┃ USB | BLE ┃  BT PRV   ┃  BT NXT   ┃  BT CLR   ┃   ┃           ┃    F1     ┃    F2     ┃    F3     ┃    F10    ┃    BSPC   ┃
     // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-    //                                     ┃    NAV    ┃   SHIFT   ┃ █████████ ┃   ┃           ┃   SPACE   ┃    SYM    ┃
+    //                                     ┃    BOOT   ┃   RESET   ┃ █████████ ┃   ┃           ┃   RESET   ┃   BOOT    ┃
     //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
      bindings = <
     // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
@@ -233,7 +233,7 @@
                  &studio_unlock &kp C_PREV  &kp C_PP    &kp C_NEXT  &kp C_VOL_UP    &none       &kp F7      &kp F8      &kp F9      &kp F12
                     &sk LSHFT   &sk LCTRL   &sk LALT    &sk LGUI    &kp C_VOL_DN    &none       &kp F4      &kp F5      &kp F6      &kp F11
         &kp ESC     &none       &out OUT_TOG &bt BT_PRV	&bt BT_NXT  &bt BT_CLR      &none       &kp F1      &kp F2      &kp F3      &kp F10     &kp BSPC
-                                            &trans      &trans      &trans          &trans      &trans      &trans
+                                            &bootloader &sys_reset  &trans          &trans      &sys_reset  &bootloader
                             >;
                     };
 
